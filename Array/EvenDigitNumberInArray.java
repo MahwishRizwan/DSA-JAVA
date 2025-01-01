@@ -27,11 +27,14 @@ public class EvenDigitNumberInArray {
     }
 
     public static int digits(int num){
-        int count = 0;
-        while(num>0){
-            count++;
-            num = num/10;
-        }
-        return count;
+
+        return (int)(Math.log10(num)) +1;
+        
+        // int count = 0;
+        // while(num>0){
+        //     count++;
+        //     num = num/10;
+        // }
+        // return count;
     }
 }
