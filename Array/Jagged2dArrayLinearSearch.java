@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Jagged2dArrayLinearSearch {
     public static void main(String args[]){
         int arr[][] = {
@@ -9,6 +11,8 @@ public class Jagged2dArrayLinearSearch {
         int target = 43;
 
         System.out.println("The target element is present at the index "+search(arr, target));
+        
+        System.out.println("The target element is present at [row, column] "+Arrays.toString(find(arr, target)));
     }
 
     public static int search(int arr[][], int target){
@@ -20,5 +24,16 @@ public class Jagged2dArrayLinearSearch {
             }
         }
         return -1;
+    }
+
+    public static int[] find(int arr[][], int target){
+        for(int row = 0; row<arr.length; row++){
+            for(int col =0; col<arr[row].length; col++){
+                if(arr[row][col] == target){
+                    return new int[] {row, col};
+                }
+            }
+        }
+        return new int[] {-1};
     }
 }
